@@ -6,9 +6,9 @@ package etu1844.models;
 
 /**
  *
- * @author tonymushah
+ * @author Kevin
  */
-public class Activite {
+public class Bouquet {
     private int id;
     private String nom;
 
@@ -28,15 +28,15 @@ public class Activite {
         this.nom = nom;
     }
     
-    public Activite() {
+    public Bouquet() {
         
     }
     
-    public Activite(String nom) {
+    public Bouquet(String nom) {
         this.setNom(nom);
     }
     
-    public Activite(int id, String nom) {
+    public Bouquet(int id, String nom) {
         this.setId(id);
         this.setNom(nom);
     }
