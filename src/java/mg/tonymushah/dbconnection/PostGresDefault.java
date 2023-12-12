@@ -15,10 +15,10 @@ public class PostGresDefault extends DBConnect{
             "postgresql", 
             null, 
             "127.0.0.1", 
-            5432, 
-            "test_tony", 
-            "test_tony", 
-            "etu001844"
+            5433, 
+            "voyage", 
+            "postgres", 
+            "paradis23"
         );
     }
     @Override

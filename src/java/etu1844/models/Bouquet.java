@@ -4,12 +4,20 @@
  */
 package etu1844.models;
 
+import mg.tonymushah.dbconnection.utils.annotations.Column;
+import mg.tonymushah.dbconnection.utils.annotations.PrimaryKey;
+import mg.tonymushah.dbconnection.utils.annotations.Table;
+
 /**
  *
  * @author Kevin
  */
+@Table (name = "bouquet")
 public class Bouquet {
+    @Column(name = "id")
+    @PrimaryKey
     private int id;
+    @Column(name = "nom")
     private String nom;
 
     public int getId() {
