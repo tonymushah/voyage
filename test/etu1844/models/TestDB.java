@@ -4,6 +4,7 @@
  */
 package etu1844.models;
 
+import etu1844.utils.OffsetLimit;
 import mg.tonymushah.dbconnection.DBConnect;
 import mg.tonymushah.dbconnection.PostGresDefault;
 
@@ -21,6 +22,13 @@ public class TestDB {
         try {
             dbc.connect();
             System.out.println("Connected ");
+            
+            Activite act = new Activite(1);
+            Bouquet[] bouquets = act.getBouquets(dbc, new OffsetLimit(0, 2));
+            
+            for (Bouquet bouq : bouquets) {
+                System.out.println(bouq.getNom());
+            }
         } catch (Exception e) {
             e.printStackTrace();
         } finally {

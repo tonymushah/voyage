@@ -12,6 +12,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
+import org.openide.util.Exceptions;
 
 /**
  *
@@ -42,14 +43,18 @@ public class ActiviteTest {
     // The methods must be annotated with annotation @Test. For example:
     //
     @Test
-    public void hello() throws Exception {
+    public void hello() {
         DBConnect dbc = new PostGresDefault();
         try {
             dbc.connect();
             System.out.println("Connected ");
         } catch (Exception e) {
         } finally {
-            dbc.close();
+            try {
+                dbc.close();
+            } catch (Exception ex) {
+                Exceptions.printStackTrace(ex);
+            }
         }
     }
 }

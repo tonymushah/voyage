@@ -4,9 +4,13 @@
  */
 package etu1844.models;
 
+import etu1844.utils.OffsetLimit;
+import java.sql.SQLException;
+import mg.tonymushah.dbconnection.DBConnect;
 import mg.tonymushah.dbconnection.utils.annotations.Column;
 import mg.tonymushah.dbconnection.utils.annotations.PrimaryKey;
 import mg.tonymushah.dbconnection.utils.annotations.Table;
+import java.sql.*;
 
 /**
  *
@@ -14,6 +18,7 @@ import mg.tonymushah.dbconnection.utils.annotations.Table;
  */
 @Table(name = "activite")
 public class Activite {
+
     @Column(name = "id")
     @PrimaryKey
     private int id;
@@ -35,17 +40,31 @@ public class Activite {
     public void setNom(String nom) {
         this.nom = nom;
     }
-    
+
     public Activite() {
-        
+
     }
-    
+
+    public Activite(int id) {
+        this.setId(id);
+    }
+
     public Activite(String nom) {
         this.setNom(nom);
     }
-    
+
     public Activite(int id, String nom) {
         this.setId(id);
         this.setNom(nom);
+    }
+
+    public Bouquet[] getBouquets(DBConnect con, OffsetLimit ol) throws SQLException, Exception {
+        Statement stmt = con.getConnection().createStatement();
+
+        String req = String.format("SELECT bouq_id as id, bouq_nom as nom FROM v_act_rel_bouquet\n"
+                + "WHERE act_id = %d\n"
+                + "LIMIT %d OFFSET %d", this.getId(), ol.limit(), ol.offset());
+        ResultSet res = stmt.executeQuery(req);
+        return con.resultset_toObjects(res, Bouquet.class);
     }
 }

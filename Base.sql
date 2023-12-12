@@ -45,3 +45,16 @@ INSERT INTO rel_act_bouquet (idActivite, idBouquet) VALUES
     (1, 2), -- Associe l'Activité 1 au Bouquet B
     (2, 2), -- Associe l'Activité 2 au Bouquet B
     (3, 3); -- Associe l'Activité 3 au Bouquet C
+
+CREATE OR REPLACE VIEW v_act_rel_bouquet AS
+SELECT rab.id as rel_id, a.id as act_id, a.nom as act_nom, b.id as bouq_id, b.nom as bouq_nom  FROM rel_act_bouquet rab 
+JOIN activite a ON rab.idActivite = a.id 
+JOIN bouquet b ON rab.idBouquet = b.id; 
+
+-- Bouquet a partir ny act_id
+SELECT bouq_id as id, bouq_nom as nom FROM v_act_rel_bouquet
+WHERE act_id = 1;
+
+-- Get act a paritr de bouq_id
+SELECT act_id as id, act_nom as nom FROM v_act_rel_bouquet
+WHERE bouq_id = 1;
