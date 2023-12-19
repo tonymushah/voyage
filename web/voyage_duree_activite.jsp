@@ -41,7 +41,7 @@
                                 <option value="2">Two</option>
                                 <option value="3">Three</option>
                             </select>
-                            <label for="nombre" >Nombre:</label>
+                            <label for="nombre">Nombre:</label>
                             <input class="form-control" type="number" name="nombre"  required>
                             <div class="mt-3">
                                 <input class="btn btn-primary" type="submit" value="Inserer">
