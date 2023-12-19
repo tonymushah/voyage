@@ -1,6 +1,6 @@
 <%-- 
-    Document   : activity
-    Created on : 19 déc. 2023, 11:58:46
+    Document   : duree
+    Created on : 19 déc. 2023, 12:37:22
     Author     : Andra
 --%>
 
@@ -17,14 +17,18 @@
         <main>
             <div class="container py-4">
                 <div class="p-5 mb-4 bg-light rounded-3">
-                    <h1 class="display-5 fw-bold">Insertion activité</h1>
+                    <h1 class="display-5 fw-bold">Insertion durée</h1>
                     <div class="container-fluid py-5">
                         <form action="#" method="post">
                             <label for="nom" >Nom:</label>
                             <input class="form-control" type="text" name="nom"  required>
+                            <label for="debut" >Début:</label>
+                            <input class="form-control" type="number" name="debut"  required>
+                            <label for="fin" >Fin:</label>
+                            <input class="form-control" type="number" name="fin"  required>
                             <div class="mt-3">
-                            <input class="btn btn-primary" type="submit" value="Valider">
-                            </div>
+                                <input class="btn btn-primary" type="submit" value="Inserer">
+                            </div>    
                         </form>
                     </div>
                 </div>
