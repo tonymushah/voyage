@@ -58,3 +58,34 @@ WHERE act_id = 1;
 -- Get act a paritr de bouq_id
 SELECT act_id as id, act_nom as nom FROM v_act_rel_bouquet
 WHERE bouq_id = 1;
+
+
+/*
+    Author: Tony Mushah
+    Created: 19 Dec 2023
+*/
+CREATE TABLE localite (
+    id SERIAL PRIMARY KEY,
+    nom VARCHAR(256) NOT NULL
+);
+
+CREATE TABLE voyage (
+    id SERIAL PRIMARY KEY,
+    nom VARCHAR(256) NOT NULL,
+    idBouquet int REFERENCES bouquet(id) NOT NULL,
+    idLocalite int REFERENCES localite(id) NOT NULL
+);
+
+CREATE TABLE duree (
+    id SERIAL PRIMARY KEY,
+    nom VARCHAR(256) NOT NULL,
+    debut INT NOT NULL,
+    fin INT NOT NULL 
+);
+
+CREATE TABLE activite_voyage(
+    id SERIAL PRIMARY KEY,
+    idVoyage INT REFERENCES voyage(id) NOT NULL,
+    idActivite INT REFERENCES activite(id) NOT NULL,
+    nombre INT NOT NULL
+);
