@@ -19,7 +19,7 @@
                 <div class="p-5 mb-4 bg-light rounded-3">
                      <h1 class="display-5 fw-bold">Activité bouquet</h1>
                     <div class="container-fluid py-5">
-                        <form action="#" method="post">
+                        <form action="activite_bouquet/insert" method="post">
                             <label for="bouquet">Bouquet:</label>
                             <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="bouquet">
                                 <option selected>Open this select menu</option>

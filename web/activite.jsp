@@ -19,11 +19,13 @@
                 <div class="p-5 mb-4 bg-light rounded-3">
                     <h1 class="display-5 fw-bold">Insertion activité</h1>
                     <div class="container-fluid py-5">
-                        <form action="#" method="post">
+                        <form action="activite/insert" method="post">
                             <label for="nom" >Nom:</label>
                             <input class="form-control" type="text" name="nom"  required>
+                            <label for="prix_unitaire" >Prix Unitaire:</label>
+                            <input class="form-control" type="number" name="prix_unitaire"  required>
                             <div class="mt-3">
-                            <input class="btn btn-primary" type="submit" value="Valider">
+                                <input class="btn btn-primary" type="submit" value="Valider">
                             </div>
                         </form>
                     </div>

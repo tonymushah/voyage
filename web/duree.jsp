@@ -19,7 +19,7 @@
                 <div class="p-5 mb-4 bg-light rounded-3">
                     <h1 class="display-5 fw-bold">Insertion durée</h1>
                     <div class="container-fluid py-5">
-                        <form action="#" method="post">
+                        <form action="duree/insert" method="post">
                             <label for="nom" >Nom:</label>
                             <input class="form-control" type="text" name="nom"  required>
                             <label for="debut" >Début:</label>
