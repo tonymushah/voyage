@@ -16,26 +16,28 @@
     <body>
         <main>
             <div class="container py-4">
-                <h1 class="display-5 fw-bold">Activité bouquet</h1>
                 <div class="p-5 mb-4 bg-light rounded-3">
+                     <h1 class="display-5 fw-bold">Activité bouquet</h1>
                     <div class="container-fluid py-5">
                         <form action="#" method="post">
-                            <label for="type">Bouquet:</label>
-                            <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="type">
+                            <label for="bouquet">Bouquet:</label>
+                            <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="bouquet">
                                 <option selected>Open this select menu</option>
                                 <option value="1">One</option>
                                 <option value="2">Two</option>
                                 <option value="3">Three</option>
                             </select>
 
-                            <label for="type">Activité:</label>
-                            <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="type">
+                            <label for="activite">Activité:</label>
+                            <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="activite">
                                 <option selected>Open this select menu</option>
                                 <option value="1">One</option>
                                 <option value="2">Two</option>
                                 <option value="3">Three</option>
                             </select>
-                            <input class="btn btn-primary" type="submit" value="Valider">
+                            <div class="mt-3">
+                                <input class="btn btn-primary" type="submit" value="Valider">
+                            </div>
                         </form>
                     </div>
                 </div>
