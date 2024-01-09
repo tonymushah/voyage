@@ -17,8 +17,9 @@ import mg.tonymushah.dbconnection.utils.annotations.Table;
  *
  * @author Kevin
  */
-@Table (name = "bouquet")
+@Table(name = "bouquet")
 public class Bouquet {
+
     @Column(name = "id")
     @PrimaryKey
     private int id;
@@ -44,20 +45,25 @@ public class Bouquet {
     public void setNom(String nom) {
         this.nom = nom;
     }
-    
+
     public Bouquet() {
-        
+
     }
-    
+
     public Bouquet(String nom) {
         this.setNom(nom);
     }
-    
+
     public Bouquet(int id, String nom) {
         this.setId(id);
         this.setNom(nom);
     }
-    
+
+    public void insert(DBConnect con) throws Exception {
+        Statement stmt = con.createStatement();
+        stmt.execute(String.format("INSERT INTO bouquet(nom) values ('%s')", this.getNom()));
+    }
+
     public Activite[] getActivites(DBConnect con, OffsetLimit ol) throws SQLException, Exception {
         Statement stmt = con.getConnection().createStatement();
 

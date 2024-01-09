@@ -4,6 +4,8 @@
  */
 package etu1844.models;
 
+import java.sql.Statement;
+import mg.tonymushah.dbconnection.DBConnect;
 import mg.tonymushah.dbconnection.utils.annotations.Column;
 import mg.tonymushah.dbconnection.utils.annotations.PrimaryKey;
 import mg.tonymushah.dbconnection.utils.annotations.Table;
@@ -38,4 +40,8 @@ public class Localite {
         this.nom = nom;
     }
 
+    public void insert(DBConnect con) throws Exception {
+        Statement stmt = con.createStatement();
+        stmt.execute(String.format("INSERT INTO localite(nom) values ('%s')", this.getNom()));
+    }
 }
