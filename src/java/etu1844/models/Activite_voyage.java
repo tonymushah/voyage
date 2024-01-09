@@ -14,6 +14,15 @@ public class Activite_voyage {
     private int activite;
     private int duree;
     private int nombre;
+    private int prix_unitaire;
+
+    public int getPrix_unitaire() {
+        return prix_unitaire;
+    }
+
+    public void setPrix_unitaire(int prix_unitaire) {
+        this.prix_unitaire = prix_unitaire;
+    }
 
     public int getId() {
         return id;
