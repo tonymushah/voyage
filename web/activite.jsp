@@ -22,6 +22,8 @@
                         <form action="#" method="post">
                             <label for="nom" >Nom:</label>
                             <input class="form-control" type="text" name="nom"  required>
+                            <label for="prix_unitaire" >Prix Unitaire:</label>
+                            <input class="form-control" type="number" name="prix_unitaire"  required>
                             <div class="mt-3">
                             <input class="btn btn-primary" type="submit" value="Valider">
                             </div>
