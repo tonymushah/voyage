@@ -4,25 +4,32 @@
  */
 package etu1844.models;
 
+import mg.tonymushah.dbconnection.utils.annotations.Column;
+import mg.tonymushah.dbconnection.utils.annotations.PrimaryKey;
+import mg.tonymushah.dbconnection.utils.annotations.Table;
+
 /**
  *
  * @author Andra
  */
+@Table(name = "activite_voyage")
 public class Activite_voyage {
+
+    @Column(name = "id")
+    @PrimaryKey
     private int id;
+
+    @Column(name = "idVoyage")
     private int voyage;
+
+    @Column(name = "idActivite")
     private int activite;
+
+    @Column(name = "id_duree")
     private int duree;
+
+    @Column(name = "nombre")
     private int nombre;
-    private int prix_unitaire;
-
-    public int getPrix_unitaire() {
-        return prix_unitaire;
-    }
-
-    public void setPrix_unitaire(int prix_unitaire) {
-        this.prix_unitaire = prix_unitaire;
-    }
 
     public int getId() {
         return id;
@@ -63,6 +70,5 @@ public class Activite_voyage {
     public void setNombre(int nombre) {
         this.nombre = nombre;
     }
-    
-    
+
 }

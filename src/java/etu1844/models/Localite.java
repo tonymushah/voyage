@@ -4,12 +4,22 @@
  */
 package etu1844.models;
 
+import mg.tonymushah.dbconnection.utils.annotations.Column;
+import mg.tonymushah.dbconnection.utils.annotations.PrimaryKey;
+import mg.tonymushah.dbconnection.utils.annotations.Table;
+
 /**
  *
  * @author Andra
  */
+@Table(name = "localite")
 public class Localite {
+
+    @Column(name = "id")
+    @PrimaryKey
     private int id;
+
+    @Column(name = "nom")
     private String nom;
 
     public int getId() {
@@ -27,6 +37,5 @@ public class Localite {
     public void setNom(String nom) {
         this.nom = nom;
     }
-    
-    
+
 }
