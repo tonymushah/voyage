@@ -17,7 +17,7 @@
         <main>
             <div class="container py-4">
                 <div class="p-5 mb-4 bg-light rounded-3">
-                    <h1 class="display-5 fw-bold">Insertion durée</h1>
+                    <h1 class="display-5 fw-bold">Insertion Voyage Durée Activité </h1>
                     <div class="container-fluid py-5">
                         <form action="#" method="post">
                             <label for="voyage" >Voyage:</label>
