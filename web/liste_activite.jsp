@@ -16,9 +16,8 @@
     <body>
         <main>
             <div class="container py-4">
-                <h1 class="display-5 fw-bold">Liste activité</h1>
-
                 <div class="p-5 mb-4 bg-light rounded-3">
+                    <h1 class="display-5 fw-bold">Liste activité</h1>
                     <div class="container-fluid py-5">
                         <label for="bouquet">Bouquets:</label>
                         <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="bouquet">
