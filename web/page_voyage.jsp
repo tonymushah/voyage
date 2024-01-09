@@ -16,9 +16,8 @@
     <body>
         <main>
             <div class="container py-4">
-                <h1 class="display-5 fw-bold">Liste activité</h1>
-
                 <div class="p-5 mb-4 bg-light rounded-3">
+                    <h1 class="display-5 fw-bold">Liste activité</h1>
                     <div class="container-fluid py-5">
                         <h2>Nom:</h2> <p> son nom </p>
                         <h3>Bouquet:</h3> <p>son bouquet</p>
