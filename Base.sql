@@ -87,5 +87,36 @@ CREATE TABLE activite_voyage(
     id SERIAL PRIMARY KEY,
     idVoyage INT REFERENCES voyage(id) NOT NULL,
     idActivite INT REFERENCES activite(id) NOT NULL,
-    nombre INT NOT NULL
+    nombre INT NOT NULL,
+    id_duree INT REFERENCES duree(id) NOT NULL
 );
+
+-- Insertion de données dans la table "localite"
+INSERT INTO localite (nom) VALUES ('Paris'), ('Londres'), ('New York');
+
+-- Insertion de données dans la table "duree"
+INSERT INTO duree (nom, debut, fin) VALUES ('Courte durée', 1, 5), ('Moyenne durée', 6, 10), ('Longue durée', 11, 15);
+
+-- Insertion de données dans la table "voyage"
+-- Assurez-vous d'avoir les valeurs idBouquet et idLocalite existantes dans les tables référencées
+INSERT INTO voyage (nom, idBouquet, idLocalite) VALUES ('Voyage A', 1, 1), ('Voyage B', 2, 2), ('Voyage C', 3, 3);
+
+-- Insertion de données dans la table "activite_voyage"
+-- Insertion de données dans la table "activite_voyage"
+INSERT INTO activite_voyage (idVoyage, idActivite, nombre, id_duree) VALUES
+    (1, 2, 10, 1), -- Exemple de relation entre le Voyage 1, l'Activité 2, d'une durée de 10 et correspondant à la Durée 1
+    (2, 3, 7, 2),  -- Exemple de relation entre le Voyage 2, l'Activité 3, d'une durée de 7 et correspondant à la Durée 2
+    (3, 1, 5, 3);  -- Exemple de relation entre le Voyage 3, l'Activité 1, d'une durée de 5 et correspondant à la Durée 3
+
+
+CREATE VIEW v_bouq_localite_voyage AS
+SELECT v.id AS voyage_id, v.nom AS voyage_nom, l.id AS local_id, l.nom As local_nom, b.id AS bouq_id, b.nom AS bouq_nom FROM voyage v 
+JOIN localite l ON v.idLocalite = l.id
+JOIN bouquet b ON v.idBouquet = b.id;
+
+
+CREATE VIEW v_act_voyage_duree AS
+SELECT av.id as act_voyage_id, vblv.*, a.id as act_id, d.id as duree_id, d.nom as duree_nom, d.debut as duree_debu, d.fin as duree_fin, av.nombre as act_v_nombre  FROM activite_voyage av
+JOIN activite a ON av.idActivite = a.id
+JOIN v_bouq_localite_voyage vblv ON vblv.voyage_id = av.idVoyage
+JOIN duree d ON av.id_duree = d.id;
