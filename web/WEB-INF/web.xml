@@ -6,7 +6,7 @@
     </servlet>
     <servlet>
         <servlet-name>bouquet-insert</servlet-name>
-        <servlet-class>etu1844.servlets.bouquet.Bouquet</servlet-class>
+        <servlet-class>etu1844.servlets.bouquet.BouquetInsert</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>duree-insert</servlet-name>
