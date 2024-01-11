@@ -91,6 +91,20 @@ CREATE TABLE voyage (
     idLocalite int REFERENCES localite(id) NOT NULL
 );
 
+CREATE TABLE reservations(
+    id SERIAL PRIMARY KEY,
+    id_voyage int REFERENCES voyage(id) NOT NULL,
+    quantite int NOT NULL,
+    insert_date DATETIME
+);
+
+-- Insertion de données dans la table "reservations"
+INSERT INTO reservations (id_voyage, quantite, insert_date) VALUES
+    (1, 20, '2024-01-11 12:15:00'),
+    (2, 15, '2024-01-11 13:30:00'),
+    (3, 25, '2024-01-11 15:45:00');
+
+
 CREATE TABLE duree (
     id SERIAL PRIMARY KEY,
     nom VARCHAR(256) NOT NULL,
