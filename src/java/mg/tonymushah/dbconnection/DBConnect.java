@@ -126,7 +126,7 @@ public class DBConnect {
         this.setConnection(null);
     }
 
-    public Statement createStatement() throws Exception {
+    public Statement createStatement() throws SQLException {
         return this.connection.createStatement();
     }
 

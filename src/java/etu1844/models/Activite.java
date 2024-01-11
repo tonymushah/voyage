@@ -22,10 +22,11 @@ public class Activite {
 
     @Column(name = "id")
     @PrimaryKey
-
     private int id;
+
     @Column(name = "nom")
     private String nom;
+
     @Column(name = "prix_unitaire")
     private int prix_unitaire;
 

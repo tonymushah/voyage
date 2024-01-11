@@ -60,6 +60,11 @@ public class Bouquet {
         this.setNom(nom);
     }
 
+    public void insert(DBConnect con) throws SQLException {
+        Statement stmt = con.createStatement();
+        stmt.execute(String.format("INSERT INTO bouquet(nom) values ('%s')", this.getNom()));
+    }
+
     public Activite[] getActivites(DBConnect con, OffsetLimit ol) throws SQLException, Exception {
         Statement stmt = con.getConnection().createStatement();
 
