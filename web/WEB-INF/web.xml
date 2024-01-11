@@ -2,7 +2,7 @@
 <web-app version="4.0" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd">
     <servlet>
         <servlet-name>activite-insert</servlet-name>
-        <servlet-class>etu1844.servlets.activite.Activite</servlet-class>
+        <servlet-class>etu1844.servlets.activite.ActiviteInsert</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>bouquet-insert</servlet-name>
@@ -18,7 +18,7 @@
     </servlet>
     <servlet>
         <servlet-name>activite_bouquet-insert</servlet-name>
-        <servlet-class>etu1844.servlets.activite_bouquet.Activite_bouquet</servlet-class>
+        <servlet-class>etu1844.servlets.activite_bouquet.ActiviteBouquetInsert</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>activite-insert</servlet-name>

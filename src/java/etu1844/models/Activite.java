@@ -11,6 +11,7 @@ import mg.tonymushah.dbconnection.utils.annotations.Column;
 import mg.tonymushah.dbconnection.utils.annotations.PrimaryKey;
 import mg.tonymushah.dbconnection.utils.annotations.Table;
 import java.sql.*;
+import java.util.Optional;
 
 /**
  *
@@ -80,10 +81,12 @@ public class Activite {
         this.setNom(nom);
         this.setPrix_unitaire(prix_unitaire);
     }
-    public void insert(DBConnect con) throws Exception{
+
+    public void insert(DBConnect con) throws Exception {
         Statement stmt = con.createStatement();
         stmt.execute(String.format("INSERT INTO activite(nom, prix_unitaire) values ('%s', %d)", this.getNom(), this.getPrix_unitaire()));
-    } 
+    }
+
     public Bouquet[] getBouquets(DBConnect con, OffsetLimit ol) throws SQLException, Exception {
         Statement stmt = con.getConnection().createStatement();
 
@@ -93,5 +96,23 @@ public class Activite {
                                    LIMIT %d OFFSET %d""", this.getId(), ol.limit(), ol.offset());
         ResultSet res = stmt.executeQuery(req);
         return con.resultset_toObjects(res, Bouquet.class);
+    }
+
+    public static Activite[] getActivites(DBConnect con, Optional<OffsetLimit> ol) throws SQLException, Exception {
+        if (ol.isEmpty() || ol == null) {
+            Statement stmt = con.getConnection().createStatement();
+
+            String req = String.format("""
+                                   SELECT id, nom, prix_unitaire FROM activite""");
+            ResultSet res = stmt.executeQuery(req);
+            return con.resultset_toObjects(res, Activite.class);
+        } else {
+            Statement stmt = con.getConnection().createStatement();
+            OffsetLimit ol_ = ol.get();
+            String req = String.format("""
+                                   SELECT id, nom, prix_unitaire FROM activite LIMIT %d OFFSET %d""", ol_.limit(), ol_.offset());
+            ResultSet res = stmt.executeQuery(req);
+            return con.resultset_toObjects(res, Activite.class);
+        }
     }
 }
