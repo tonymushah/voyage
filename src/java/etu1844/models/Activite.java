@@ -27,9 +27,6 @@ public class Activite {
     @Column(name = "nom")
     private String nom;
 
-    @Column(name = "prix_unitaire")
-    private int prix_unitaire;
-
     public int getId() {
         return id;
     }
@@ -63,28 +60,9 @@ public class Activite {
         this.setNom(nom);
     }
 
-    public int getPrix_unitaire() {
-        return prix_unitaire;
-    }
-
-    public void setPrix_unitaire(int prix_unitaire) {
-        this.prix_unitaire = prix_unitaire;
-    }
-
-    public Activite(int id, String nom, int prix_unitaire) {
-        this.setId(id);
-        this.setNom(nom);
-        this.setPrix_unitaire(prix_unitaire);
-    }
-
-    public Activite(String nom, int prix_unitaire) {
-        this.setNom(nom);
-        this.setPrix_unitaire(prix_unitaire);
-    }
-
     public void insert(DBConnect con) throws Exception {
         Statement stmt = con.createStatement();
-        stmt.execute(String.format("INSERT INTO activite(nom, prix_unitaire) values ('%s', %d)", this.getNom(), this.getPrix_unitaire()));
+        stmt.execute(String.format("INSERT INTO activite(nom) values ('%s')", this.getNom()));
     }
 
     public Bouquet[] getBouquets(DBConnect con, OffsetLimit ol) throws SQLException, Exception {

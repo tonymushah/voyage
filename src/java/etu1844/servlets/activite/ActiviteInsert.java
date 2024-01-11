@@ -25,8 +25,7 @@ public class ActiviteInsert extends PostGresInitServlet {
 
     private Activite insert(HttpServletRequest request, DBConnect con) throws Exception {
         String nom = request.getParameter("nom");
-        String prix_unitaire = request.getParameter("prix_unitaire");
-        Activite act = new Activite(nom, Integer.parseInt(prix_unitaire));
+        Activite act = new Activite(nom);
         try {
             act.insert(con);
         } catch (Exception e) {
@@ -51,7 +50,6 @@ public class ActiviteInsert extends PostGresInitServlet {
                 PrintWriter out = response.getWriter();
                 out.println("<h1>Resultat</h1>");
                 out.println(String.format("<h2>Nom: %s</h2>", act.getNom()));
-                out.println(String.format("<h2>Prix Unitaire: %d</h2>", act.getPrix_unitaire()));
             } catch (Exception ex) {
                 this.handle_execption(response, ex);
             }finally{

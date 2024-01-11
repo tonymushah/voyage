@@ -15,7 +15,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Andra
  */
-public class Voyage extends HttpServlet {
+public class VoyageInsert extends HttpServlet {
+    
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {

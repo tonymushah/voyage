@@ -9,11 +9,9 @@ import etu1844.models.ActiviteBouquet;
 import etu1844.models.Bouquet;
 import etu1844.servlets.PostGresInitServlet;
 import java.io.IOException;
-import java.io.OutputStream;
 import java.io.PrintWriter;
+import java.sql.SQLException;
 import java.util.Optional;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -33,7 +31,7 @@ public class ActiviteBouquetInsert extends PostGresInitServlet {
         try {
             act_bouq.insert(con);
             con.getConnection().commit();
-        } catch (Exception ex) {
+        } catch (SQLException ex) {
             con.getConnection().rollback();
             throw ex;
         } finally {
@@ -69,7 +67,6 @@ public class ActiviteBouquetInsert extends PostGresInitServlet {
         } catch (Exception ex) {
             this.handle_execption(resp, ex);
         }
-
     }
 
     @Override
@@ -86,6 +83,5 @@ public class ActiviteBouquetInsert extends PostGresInitServlet {
         } catch (Exception ex) {
             this.handle_execption(response, ex);
         }
-
     }
 }
