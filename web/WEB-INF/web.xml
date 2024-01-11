@@ -10,7 +10,7 @@
     </servlet>
     <servlet>
         <servlet-name>duree-insert</servlet-name>
-        <servlet-class>etu1844.servlets.duree.Duree</servlet-class>
+        <servlet-class>etu1844.servlets.duree.DureeInsert</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>voyage-insert</servlet-name>
