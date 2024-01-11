@@ -53,24 +53,12 @@ public class ActiviteInsert extends PostGresInitServlet {
                 out.println(String.format("<h2>Nom: %s</h2>", act.getNom()));
                 out.println(String.format("<h2>Prix Unitaire: %d</h2>", act.getPrix_unitaire()));
             } catch (Exception ex) {
-                response.setContentType("text/plain");
-
-                PrintWriter out = response.getWriter();
-                out.println(ex.getMessage());
-                for (StackTraceElement e : ex.getStackTrace()) {
-                    out.println(e.toString());
-                }
+                this.handle_execption(response, ex);
             }finally{
                 con.close();
             }
         } catch (Exception ex) {
-            response.setContentType("text/plain");
-
-            PrintWriter out = response.getWriter();
-            out.println(ex.getMessage());
-            for (StackTraceElement e : ex.getStackTrace()) {
-                out.println(e.toString());
-            }
+            this.handle_execption(response, ex);
         }
 
     }

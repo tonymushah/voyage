@@ -16,7 +16,7 @@ import org.postgresql.Driver;
  *
  * @author tonymushah
  */
-public abstract class PostGresInitServlet extends HttpServlet {
+public abstract class PostGresInitServlet extends HttpServlet implements HandleExecption {
 
     @Override
     public void init(ServletConfig config) throws ServletException{
