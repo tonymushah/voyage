@@ -21,10 +21,10 @@ public class Activite_voyage {
     @PrimaryKey
     private int id;
 
-    @Column(name = "idVoyage")
+    @Column(name = "idvoyage")
     private int voyage;
 
-    @Column(name = "idActivite")
+    @Column(name = "idactivite")
     private int activite;
 
     @Column(name = "id_duree")
