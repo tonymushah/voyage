@@ -5,19 +5,11 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
-        <title>Voyage</title>
-    </head>
-    <body>
-        <main>
+<%@ include file="header.jsp" %>
             <div class="container py-4">
                 <div class="p-5 mb-4 bg-light rounded-3">
                     <h1 class="display-5 fw-bold">Liste activité</h1>
+                            <hr class="my-4" />
                     <div class="container-fluid py-5">
                         <label for="bouquet">Bouquets:</label>
                         <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="bouquet">
@@ -47,11 +39,4 @@
                         </table>
                     </div>
                 </div>
-
-                <footer class="pt-3 mt-4 text-muted border-top">
-                    &copy; 
-                </footer>
-            </div>
-        </main>
-    </body>
-</html>
+<%@ include file="footer.jsp" %>
